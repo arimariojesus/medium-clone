@@ -1,0 +1,91 @@
+/*=== Variables CSS ===*/
+:root {
+  --margin-header: 3em;
+}
+/*=== Colors ===*/
+:root {
+  --first-header-color: rgb(255, 192, 23);
+  --header-title-color: #080808;
+  --first-header-button: #191919;
+  --secondary-header-button: #1A8917;
+  --text-color: #292929;
+  --text-span-color: #757575;
+}
+
+/*=== BASE ===*/
+*,::before,::after {
+  box-sizing: border-box;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: rgba(0,0,0,0.8);
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: rgba(0,0,0,0.8);
+}
+
+/*=== LAYOUT ===*/
+header {
+  min-width: 100vw;
+  background: var(--first-header-color);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*=== NAV ===*/
+.nav__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1192px;
+  height: 75px;
+  padding: 25px 0;
+  margin: 0 var(--margin-header);
+}
+.nav .logo-img {
+  width: 160px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar__list {
+  display: flex;
+  float: left;
+}
+.navbar__list li a {
+  margin-right: 25px;
+}
+.navbar button {
+  background: var(--first-header-button);
+  padding: 11px 16px;
+  border-radius: 4px;
+  color: white;
+  transition: .4s;
+}
+.navbar button:hover {
+  background: #040404;
+  cursor: pointer;
+}
+
