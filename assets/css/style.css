@@ -53,6 +53,8 @@ body {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 var(--margin-header);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
 }
 .section {
   padding-top: 40px;
@@ -70,6 +72,15 @@ body {
   background-position: bottom 28px right -126px;
   background-size: 385px 341px;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 0.083em;
+  
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
 /*=== NAV ===*/
@@ -149,23 +160,12 @@ body {
 }
 
 /*=== TRENDING ===*/
-.trending__container {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: var(--text-color);
-}
 .trending__icon {
   margin-right: 10px;
 }
 .trending__title {
   display: flex;
   align-items: center;
-
-  text-transform: uppercase;
-  letter-spacing: 0.083em;
-  
-  font-size: 12px;
-  font-weight: 800;
-  margin-bottom: 16px;
 }
 /* .trending__list {
   display: flex;
