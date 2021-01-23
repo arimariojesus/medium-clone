@@ -175,7 +175,8 @@ body {
   flex-wrap: wrap;
 } */
 .item-content {
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 }
 .trending__item {
   display: flex;
@@ -192,16 +193,16 @@ body {
   top: -10px;
   color: var(--color-number);
 }
-.trending__item-content {
-  display: flex;
-  flex-direction: column;
-}
 .trending__item-header {
   display: flex;
   align-items: center;
+  margin-bottom: 8px;
 }
-.trending__item-header h4 {
+.content-author {
   margin-left: 8px;
+}
+.content-author span {
+  color: var(--text-span-color);
 }
 .dot {
   display: block;
