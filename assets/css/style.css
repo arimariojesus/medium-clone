@@ -96,7 +96,11 @@ body {
   left: 0;
   border-bottom: 1px solid;
   background-color: inherit;
+  transition: background-color .3s linear;
   z-index: var(--z-index);
+}
+.nav-secondary {
+  background-color: white;
 }
 .nav__container {
   display: flex;
@@ -122,11 +126,14 @@ body {
   padding: 11px 17px;
   border-radius: 4px;
   font-size: 14px;
-  transition: .4s;
+  transition: background-color .3s linear;
 }
-.nav__menu button {
-  background: var(--first-header-button);
+.btn-nav {
+  background-color: var(--first-header-button);
   color: white;
+}
+.btn-secondary {
+  background-color: var(--secondary-header-button);
 }
 .nav__menu button:hover {
   background: #040404;
@@ -224,6 +231,9 @@ body {
   min-width: 0;
   width: 100%;
   margin-right: 20px;
+}
+.post__content-body {
+  text-transform: capitalize;
 }
 .post__content-inside {
   margin-bottom: 8px;
