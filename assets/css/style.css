@@ -257,6 +257,10 @@ body {
   color: var(--text-span-color);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.post__content-footer-wrapper {
+  display: flex;
 }
 .post__content-footer-star {
   margin-left: 6px;

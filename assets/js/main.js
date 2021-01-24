@@ -50,10 +50,12 @@ function createTrendingElement(data, n) {
           <h2>${data.post.body.substr(0, 40)}</h2>
         </div>
         <div class="post__content-footer">
-          <span class="post__content-footer-date">${date}</span>
-          <span class="dot">·</span>
-          <span class="post__content-footer-read">${getRandomNumber(1,10)} min read</span>
-          ${randomStar()}
+          <div class="post__content-footer-wrapper">
+            <span class="post__content-footer-date">${date}</span>
+            <span class="dot">·</span>
+            <span class="post__content-footer-read">${getRandomNumber(1,10)} min read</span>
+            ${randomStar()}
+          </div>
         </div>
       </div>
     </div>
