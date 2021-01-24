@@ -34,6 +34,7 @@ async function getTrending() {
 }
 
 function createTrendingElement(data, n) {
+  const date = transformDate(data.user.registered.date);
   const trending = `
   <div class="trending__list">
     <div class="trending__item post">
@@ -43,16 +44,16 @@ function createTrendingElement(data, n) {
       <div class="trending__item-content post__content">
         <div class="post__content-header post__content-inside">
           <img src="${data.user.picture.large}" alt="" width="20" height="20">
-          <h4 class="post__content-author">${data.user.name.first} ${data.user.name.first}</h4>
+          <h4 class="post__content-author">${data.user.name.first} ${data.user.name.last}</h4>
         </div>
         <div class="post__content-body post__content-inside">
           <h2>${data.post.body.substr(0, 40)}</h2>
         </div>
         <div class="post__content-footer">
-          <span class="post__content-footer-date">Jan 20</span>
+          <span class="post__content-footer-date">${date}</span>
           <span class="dot">·</span>
           <span class="post__content-footer-read">${getRandomNumber(1,10)} min read</span>
-          ${star()}
+          ${randomStar()}
         </div>
       </div>
     </div>
@@ -62,7 +63,7 @@ function createTrendingElement(data, n) {
   insertTrending(trending);
 }
 
-function star() {
+function randomStar() {
   const star = `
     <span class="post__content-footer-star">
     <svg class="star-15px_svg__svgIcon-use" width="15" height="15" viewBox="0 0 15 15"><path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg>
@@ -70,6 +71,17 @@ function star() {
   `;
 
   return getRandomNumber(0,1) ? star : '<span></span>';
+}
+
+function transformDate(stringFormatDate) {
+  const date = new Date(stringFormatDate);
+  const locale = 'en-US';
+  const options = {
+    month: 'short',
+    day: 'numeric',
+  };
+
+  return date.toLocaleDateString(locale, options);
 }
 
 function insertTrending(data) {
