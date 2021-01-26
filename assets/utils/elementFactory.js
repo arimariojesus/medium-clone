@@ -39,7 +39,7 @@ export function createTrendingElement(data, n) {
         <h4 class="post__content-author">${data.user.name.first} ${data.user.name.last}</h4>
       </div>
       <div class="post__content-body post__content-inside">
-        <h2>${data.post.body.substr(0, 78)}${data.post.body.length > 80 ? '' : '...'}</h2>
+        <h2>${data.post.body.substr(0, 45)}${data.post.body.length > 45 ? '' : '...'}</h2>
       </div>
       <div class="post__content-footer">
         <div class="post__content-footer-wrapper">
@@ -70,13 +70,13 @@ export function createPostElement(data) {
         <h4 class="post__content-author">${data.user.name.first} ${data.user.name.last}</h4>
       </div>
       <div class="post__content-body post__content-inside">
-        <h2>${data.post.body.substr(0, 40)}</h2>
+        <h2>${data.post.body.substr(0, 45)}${data.post.body.length > 45 ? '' : '...'}</h2>
       </div>
       <div class="post__content-footer">
         <div class="post__content-footer-wrapper">
           <span class="post__content-footer-date">${date}</span>
           <span class="dot">·</span>
-          <span class="post__content-footer-read">${getRandomNumber(1,10)} min read</span>
+          <span class="post__content-footer-read">${getRandomNumber(1,9)} min read</span>
           ${randomStar()}
         </div>
         <span class="post__content-footer-save">

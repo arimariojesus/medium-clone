@@ -233,6 +233,7 @@ body {
   margin-right: 20px;
 }
 .post__content-body {
+  font-size: 11px;
   text-transform: capitalize;
 }
 .post__content-inside {
