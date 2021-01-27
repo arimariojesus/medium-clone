@@ -83,8 +83,8 @@ async function infiniteScrolling() {
 
 function handleScroll() {
   handleColorHeader('trending', 70);
-  infiniteScrolling();
+  // infiniteScrolling();
 }
 
 window.addEventListener('scroll', handleScroll);
-window.addEventListener('load', insertTrending);
+// window.addEventListener('load', insertTrending);
