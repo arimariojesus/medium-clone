@@ -49,6 +49,7 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(0,0,0,0.8);
+  overflow-x: hidden;
 }
 
 /*=== LAYOUT ===*/
@@ -458,7 +459,7 @@ body {
   }
 
   .aux__container {
-    width: calc(100% - var(--margin-header));
+    width: calc(100%);
     display: grid;
     grid-template-columns: repeat(8,1fr) repeat(4, minmax(48px, 1fr));
     grid-template-rows: 1fr;
@@ -466,6 +467,7 @@ body {
 
     border-top: var(--border-style);
     padding-top: 56px;
+    margin: 0 auto;
   }
   
   .discover {
@@ -503,5 +505,23 @@ body {
     flex-wrap: wrap;
 
     padding: 24px 0;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .trending__item.post {
+    max-width: 33.33333%;
+  }
+
+  .aux__container {
+    grid-column-gap: 0;
+  }
+  .posts__container {
+    margin: 0;
+  }
+  .posts {
+    grid-column: 1 / span 7;
+  }
+  .discover {
+    grid-column: 9 / span 4;
   }
 }
