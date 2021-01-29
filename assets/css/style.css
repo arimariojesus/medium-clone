@@ -415,13 +415,64 @@ body {
   }
 
   .posts .post .post__content {
-    max-width: 70%;
+    width: 70%;
   }
   .posts .post .post-thumb {
-    max-width: 30%;
+    width: 30%;
   }
   .posts .post .post__content-body {
     font-size: 15px;
     letter-spacing: -0.053em;
+  }
+}
+@media screen and (min-width: 904px) {
+  :root {
+    --margin-header: 64px;
+  }
+
+  .header {
+    background-position: bottom 59px right 80px;
+  }
+  .header__container > div {
+    max-width: 550px;
+  }
+
+  .posts.section, .discover.section {
+    border: none;
+    padding-top: 0;
+  }
+
+  .aux__container {
+    width: calc(100% - var(--margin-header));
+    display: grid;
+    grid-template-columns: repeat(8,1fr) repeat(4, minmax(48px, 1fr));
+    grid-template-rows: 1fr;
+    grid-column-gap: 32px;
+
+    border-top: 1px solid rgb(230, 230, 230);
+    padding-top: 56px;
+  }
+  
+  .discover {
+    grid-row-start: 1;
+    grid-column: 9 / span 4;
+    display: block;
+  }
+  .discover .discover__container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(70px + 34px);
+
+    margin-left: 0;
+    padding-right: 1.4em;
+  }
+
+  .posts {
+    grid-row-start: 1;
+    grid-column: 1 / span 8;
+  }
+  .posts .posts__container {
+    margin-right: 0;
+    padding-right: 15px;
   }
 }
