@@ -115,7 +115,7 @@ body {
   width: 100%;
   padding: 25px 0;
 }
-.nav__container .logo-img {
+.nav__container .logo-img img {
   width: 160px;
 }
 .nav__menu {
@@ -449,7 +449,9 @@ body {
   :root {
     --margin-header: 64px;
   }
-
+  .nav__container .logo-img img {
+    width: 180px;
+  }
   .header {
     background-position: bottom 59px right 80px;
   }
