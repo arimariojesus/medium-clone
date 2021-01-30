@@ -459,7 +459,7 @@ body {
   }
 
   .aux__container {
-    width: calc(100%);
+    width: calc(100% - var(--margin-header)*2);
     display: grid;
     grid-template-columns: repeat(8,1fr) repeat(4, minmax(48px, 1fr));
     grid-template-rows: 1fr;
@@ -467,7 +467,7 @@ body {
 
     border-top: var(--border-style);
     padding-top: 56px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
   
   .discover {
@@ -492,8 +492,8 @@ body {
     grid-row-start: 1;
     grid-column: 1 / span 8;
   }
-  .posts .posts__container {
-    margin-right: 0;
+  .posts__container {
+    margin: 0;
   }
   .posts .post > .post-thumb {
     width: 200px;
@@ -513,10 +513,8 @@ body {
   }
 
   .aux__container {
+    width: calc(100% - var(--margin-header)*2);
     grid-column-gap: 0;
-  }
-  .posts__container {
-    margin: 0;
   }
   .posts {
     grid-column: 1 / span 7;
