@@ -49,7 +49,6 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(0,0,0,0.8);
-  overflow-x: hidden;
 }
 
 /*=== LAYOUT ===*/
@@ -86,6 +85,10 @@ body {
   font-size: 12px;
   font-weight: 800;
   margin-bottom: 16px;
+}
+
+.aux__container {
+  width: 100%;
 }
 
 /*=== NAV ===*/
@@ -192,6 +195,7 @@ body {
 
 /*=== DISCOVER TOPICS ===*/
 .discover {
+  width: 100%;
   font-size: 13px;
   padding: 24px 0;
 }
@@ -460,6 +464,8 @@ body {
 
   .aux__container {
     width: calc(100% - var(--margin-header)*2);
+    max-width: var(--max-width);
+    margin: 0 var(--margin-header);
     display: grid;
     grid-template-columns: repeat(8,1fr) repeat(4, minmax(48px, 1fr));
     grid-template-rows: 1fr;
@@ -513,7 +519,7 @@ body {
   }
 
   .aux__container {
-    width: calc(100% - var(--margin-header)*2);
+    margin: 0 auto;
     grid-column-gap: 0;
   }
   .posts {
