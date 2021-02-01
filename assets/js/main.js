@@ -1,4 +1,4 @@
-import { createPostElement, createTrendingElement } from "../utils/elementFactory.js";
+import { createPostElement, createTrendingElement, createSkeletonElement } from "../utils/elementFactory.js";
 import { getPostData, getTrendingData } from "../utils/getData.js";
 
 const nav = document.querySelector('.nav');
@@ -31,7 +31,7 @@ async function insertTrending() {
   }
 }
 
-async function insertPost() {
+async function insertPosts() {
   const postsContainer = document.querySelector('.posts__container');
   const skeletonLoading = document.querySelector('.post__skeleton');
   const postData = await getPostData();
@@ -50,27 +50,13 @@ async function insertPost() {
 }
 
 function showLoading() {
+  const postsContainer = document.querySelector('.posts__container');
+  const skeletonElement = createSkeletonElement();
+
+  postsContainer.appendChild(skeletonElement);
   loadingIsVisible = true;
   
-  const postsContainer = document.querySelector('.posts__container');
-  const skeletonLoading = document.createElement('div');
-  skeletonLoading.setAttribute('class', 'post__skeleton');
-  skeletonLoading.innerHTML = `
-    <div class="post__skeleton-content">
-    <div class="post__skeleton-header">
-      <div class="post__skeleton-author-img content-skeleton"></div>
-      <div class="post__skeleton-author content-skeleton"></div>
-    </div>
-    <div class="post__skeleton-body">
-      <div class="body-1 content-skeleton"></div>
-      <div class="body-2 content-skeleton"></div>
-    </div>
-    </div>
-    <div class="post__skeleton-thumb content-skeleton"></div>
-  `;
-
-  postsContainer.appendChild(skeletonLoading);
-  insertPost();
+  insertPosts();
 }
 
 async function infiniteScrolling() {
@@ -82,7 +68,7 @@ async function infiniteScrolling() {
 }
 
 function handleScroll() {
-  handleColorHeader('trending', 70);
+  handleColorHeader('trending');
   infiniteScrolling();
 }
 

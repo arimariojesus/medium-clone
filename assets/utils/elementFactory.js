@@ -94,3 +94,24 @@ export function createPostElement(data) {
 
   return postElement;
 }
+
+export function createSkeletonElement() {
+  const skeletonLoading = document.createElement('div');
+  skeletonLoading.setAttribute('class', 'post__skeleton');
+
+  skeletonLoading.innerHTML = `
+    <div class="post__skeleton-content">
+    <div class="post__skeleton-header">
+      <div class="post__skeleton-author-img content-skeleton"></div>
+      <div class="post__skeleton-author content-skeleton"></div>
+    </div>
+    <div class="post__skeleton-body">
+      <div class="body-1 content-skeleton"></div>
+      <div class="body-2 content-skeleton"></div>
+    </div>
+    </div>
+    <div class="post__skeleton-thumb content-skeleton"></div>
+  `;
+
+  return skeletonLoading;
+}
