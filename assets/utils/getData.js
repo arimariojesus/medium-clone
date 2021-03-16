@@ -7,8 +7,8 @@ export async function getPostData(dimensionsThumb = '100/100') {
 
   const thumbData = [];
   for (let i = 1; i <= 5; i++) {
-    const thumbResponse = await fetch(`https://picsum.photos/${dimensionsThumb}?random=${i}`);
-    thumbData.push(thumbResponse.url);
+    const thumbUrl = `https://picsum.photos/${dimensionsThumb}?random=${i}`;
+    thumbData.push(thumbUrl);
   }
 
   const data = { post: postData, user: userData.results, thumb: thumbData };
